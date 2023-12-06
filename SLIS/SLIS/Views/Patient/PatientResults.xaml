@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SLIS.Views.Patient.PatientResults">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <!--<ActivityIndicator x:Name="activityindicator"  Margin="5" VerticalOptions="Center" HorizontalOptions="Center" Color="Black" IsRunning="True"   HeightRequest="20" IsVisible="True"  />-->
+             <ListView x:Name="resultsList"
+                     VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Frame HasShadow="true" HorizontalOptions="FillAndExpand" CornerRadius="0" Padding="0"  BackgroundColor="Transparent" >
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="90" />
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView BackgroundColor="LightGray"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
+                                            <BoxView BackgroundColor="LightGray" WidthRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Grid.Column="0"/>
+                                            <Label FontSize="Small"
+                                       TextColor="Black" 
+                                               Margin="3"
+                                           Grid.Column="0"
+                                    Text="{Binding Test}" HorizontalOptions="Start" /> 
+                                            <Label FontSize="Small"
+                                       TextColor="Black" 
+                                       HorizontalOptions="Start"
+                                               Grid.ColumnSpan="4"
+                                           Grid.Column="1"
+                                        Text="{Binding Result}"/> 
+                                            <!--<BoxView BackgroundColor="#e1e8e3" WidthRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Grid.Column="2"/>-->
+                                            <Label FontSize="Small"
+                                               HorizontalOptions="Center"
+                                       TextColor="Black" 
+                                           Grid.Column="2"
+                                    Text="{Binding Units}"/>
+
+                                            <!--<BoxView BackgroundColor="#e1e8e3" WidthRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Grid.Column="3"/>-->
+                                            <Label FontSize="Small"
+                                       TextColor="Black"                                                
+                                           Grid.Column="3"
+                                    Text="{Binding Flag}" HorizontalOptions="Center"/>
+
+                                            <BoxView BackgroundColor="LightGray" WidthRequest="0.5" HorizontalOptions="End" VerticalOptions="Fill" Grid.Column="4"/>
+                                            <Label FontSize="Small"
+                                       TextColor="Black" 
+                                    HorizontalOptions="EndAndExpand"
+                                    Grid.Column="4"
+                                    Margin="3"
+                                    Text="{Binding Range}"/>
+
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView> 
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

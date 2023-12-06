@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:SLIS.Views.Patient" 
+             x:Class="SLIS.Views.Patient.TabbedPage1">
+
+    <NavigationPage.TitleView >
+        <StackLayout>
+          <Image  HorizontalOptions="Start" BackgroundColor="Transparent"   HeightRequest="40" WidthRequest="40" Margin="5"  Source="heart.png"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+  <!--Pages can be added as references or inline-->
+    <local:PatientResults Title="Results" Icon="results.png" />
+    <local:PatientHome Title="Home" Icon="home.png" />
+    <local:PatientAccount Title="My Account" Icon="myaccount.png" />
+  <!--<ContentPage Title="Home" />
+  <ContentPage Title="Results" />
+  <ContentPage Title="My Acount" />-->
+   
+</TabbedPage>

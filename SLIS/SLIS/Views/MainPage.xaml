@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             NavigationPage.HasNavigationBar="False" 
+             x:Class="SLIS.MainPage"> 
+        <RelativeLayout>
+        <Image Aspect="AspectFill"  Source="q1.jpg"
+ RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+ RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
+        <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+ RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+                <Label Text="Copyriths @ silworld Pvt Ltd" VerticalOptions="End" HorizontalOptions="Center" Margin="20" FontSize="Small" TextColor="White"/>
+                <ScrollView>
+                    <StackLayout >
+                    <Frame BackgroundColor="Transparent"  Margin ="20,20,20,0" CornerRadius="0">
+                        <StackLayout>
+                        <Label Text="Total Medical" HorizontalTextAlignment="Center" TextColor="Transparent" FontAttributes="Bold" TextTransform="Uppercase" FontSize="50"/>
+                        <Label Text="Informatics Solution" HorizontalTextAlignment="Center"   TextColor="Transparent" TextTransform="Uppercase" FontSize="32"/>
+                        </StackLayout>
+                    </Frame>
+                    <Grid Margin="25,0,25,0"  VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row ="1">
+                            <Button
+                                x:Name="btnDoctor"
+                                  VerticalOptions="Center"
+                                  Text="Doctor Login"
+                                  BackgroundColor="#2A2D70"
+                                  TextColor="White" 
+                                  CornerRadius="30"
+                                  WidthRequest="90"
+                                  Clicked="btnDoctor_Clicked"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row ="2">
+                            <Button
+                                x:Name="btnPatient"
+                                  VerticalOptions="Center"
+                                  Text="Patient Login"
+                                  BackgroundColor="#2A2D70"
+                                  TextColor="White" 
+                                  CornerRadius="30"
+                                  WidthRequest="90"
+                                  Clicked="btnPatient_Clicked"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row ="3">
+                            <Button
+                                x:Name="btnEmployee"
+                                  VerticalOptions="Center"
+                                  Text="Employee Login"
+                                  BackgroundColor="#2A2D70"
+                                  TextColor="White" 
+                                  CornerRadius="30"
+                                  WidthRequest="90"
+                                  Clicked="btnEmployee_Clicked"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row ="4" VerticalOptions="End">
+                            <Label HorizontalOptions="CenterAndExpand" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Sign Up Today !" FontAttributes="Bold" FontSize="18"  TextColor="White"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+
+                    </Grid> 
+                </StackLayout> 
+            </ScrollView>
+        </Grid>
+    </RelativeLayout> 
+    <!--<ScrollView> 
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <ImageButton Source="path.png"
+                             Margin="10,20,10,5"
+                             WidthRequest="200"
+                             HeightRequest="200" 
+                             HorizontalOptions="Center"
+                             VerticalOptions="CenterAndExpand" 
+                             BackgroundColor="Transparent" 
+                             />
+            <Frame CornerRadius="30" HasShadow="False" Margin="-5,0,-5,-20" BackgroundColor="White">
+
+                <StackLayout>
+                    --><!--<Grid Margin="30,10,30,0" >--><!--
+                    <Grid Margin="0,30,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="usertype.png" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                        <Picker x:Name="txtUserType"  FontSize="Large" Grid.Column="1" Title="Usertype" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" />
+                    </Grid>
+                    --><!--<Grid Margin="30,10,30,0" >--><!--
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="username.png" Grid.Row="1" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                        <Entry x:Name="txtUsername" Grid.Row="1" Grid.Column="1"  IsPassword="False" HorizontalTextAlignment="Start"   Placeholder="Username" FontSize="Large"/>
+                    </Grid>
+                    --><!--<Grid Margin="30,10,30,0" >--><!--
+                    <Grid  Margin="0,10,0,0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="password.png" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                        <Entry x:Name="txtPassword" Grid.Column="1"  IsPassword="True" HorizontalTextAlignment="Start"   Placeholder="Password" FontSize="Large"/>
+                    </Grid>
+                    --><!--<Grid Margin="30,10,30,0" >--><!--
+                    <Grid Margin="0,20,0,0"  VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row ="0">
+                            <Button
+                                  VerticalOptions="Center"
+                                  Text="Login"
+                                  BackgroundColor="Red"
+                                  TextColor="White" 
+                                  CornerRadius="30"
+                                  WidthRequest="90"
+                                  Clicked="Button_Clicked"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Margin="5" VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalOptions="Start" Grid.Row ="0" Grid.Column="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Create Account"  FontAttributes="None"  FontSize="Default"  TextColor="Gray"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label HorizontalOptions="End" Grid.Row ="0" Grid.Column="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Lost Password"  FontSize="Default"   TextColor="Gray"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="30" Margin="-5,-20,-5,0" HasShadow="False"  VerticalOptions="Fill" BackgroundColor="White" >
+            </Frame>
+
+        </StackLayout>
+
+    </ScrollView>-->
+
+</ContentPage>

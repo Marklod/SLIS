@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False" 
+             BackgroundImageSource="q1.jpg"
+             BackgroundColor="#2A2D70"
+             x:Class="SLIS.Views.Login">
+    <ContentPage.Content>
+        <ScrollView   >
+
+            <StackLayout VerticalOptions="StartAndExpand" >
+                
+                
+                <!--Top Designed Box Start Here The One with Logo-->
+                <BoxView HeightRequest="100" BackgroundColor="#2A2D70" ></BoxView>
+                <Frame CornerRadius="170" Margin="-5,-100,-5,0" HasShadow="False"  VerticalOptions="Fill" BackgroundColor="#2A2D70" >
+                    <!--<StackLayout>
+                    <ImageButton Source="pathe.png"
+                             Margin="10,0,10,5"
+                             WidthRequest="200"
+                             HeightRequest="200" 
+                             HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="EndAndExpand" 
+                             BackgroundColor="Transparent"  
+                             />
+                           <Label Text="Informatics Solution" HorizontalTextAlignment="Center" Padding ="24,-10,24,0"  TextColor="White" TextTransform="Uppercase" FontSize="32"/>
+                        </StackLayout>-->
+                    <Grid Margin="0,-10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Welcome to" TextColor="white" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End"  TextTransform="Uppercase" FontSize="Default"></Label>
+                        <Label Text="Am Here" x:Name="txtLoginAs" TextColor="white" Grid.Row="3" HorizontalOptions="Center" TextTransform="Uppercase" FontSize="32"></Label>
+                        <Image Source="heart.png" Grid.Row="4" Aspect="AspectFit" WidthRequest="45" HeightRequest="45"  HorizontalOptions="Center"  VerticalOptions="Center" />
+                    </Grid>
+                </Frame>
+                <!--Top Designed Box Start End Here The One with Logo-->
+                
+                
+                                
+                <!--<Frame CornerRadius="30" HasShadow="False" Margin="-5,50,-5,-20" BackgroundColor="Transparent">-->
+                    
+                    
+                    <StackLayout Margin="30"> 
+                        <!--<Grid Margin="30,10,30,0" >-->
+                        <Grid Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="username.png" Grid.Row="1" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                            <Entry x:Name="txtUsername" Grid.Row="1" Grid.Column="1"  IsPassword="False" HorizontalTextAlignment="Center" TextColor="White"   Margin="10,0,10,0" Placeholder="Username" FontSize="24"/>
+                        </Grid>
+                        <!--<Grid Margin="30,10,30,0" >-->
+                        <Grid  Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="password.png" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                            <Entry x:Name="txtPassword" Grid.Column="1"  IsPassword="True" HorizontalTextAlignment="Center" Margin="10,0,10,0"   Placeholder="Password" FontSize="24"/>
+                        </Grid>
+                        <!--<Grid Margin="30,10,30,0" >-->
+                        <Grid Margin="0,20,0,0"  VerticalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/> 
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row ="0">
+                                <Button
+                                x:Name="btnLogin"
+                                  VerticalOptions="Center"
+                                  Text="Login"
+                                  BackgroundColor="#2A2D70"
+                                  TextColor="White" 
+                                  CornerRadius="30"
+                                  WidthRequest="90"
+                                    Clicked="btnLogin_Clicked"/>
+                            </StackLayout>
+                        </Grid>
+
+                    <Grid Margin="0,20,0,0"  VerticalOptions="CenterAndExpand">
+                        <Label HorizontalOptions="CenterAndExpand" x:Name="lnkForgotPassWord" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Forgot Password ? Reset Now" FontAttributes="Bold" FontSize="18"  TextColor="White"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+                    
+                    
+                <!--</Frame>-->
+               
+                
+                
+                <!--<Frame CornerRadius="30" Margin="-5,-20,-5,0" HasShadow="False"  VerticalOptions="Fill" BackgroundColor="White" >
+                </Frame>-->
+                
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
