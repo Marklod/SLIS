@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"   BackgroundColor="White" 
+             x:Class="SLIS.Views.Account">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Frame HasShadow="True" BackgroundColor="#D0CCCC" CornerRadius="30" Margin="0,-20,0,0" >
+                    <StackLayout BackgroundColor="#D0CCCC">
+                    <Frame Margin="0,10,0,5"
+                   BorderColor="Black"   
+                   HasShadow="True" 
+                   CornerRadius="50"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   IsClippedToBounds="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                        <Image Source="nick.png"
+                     Aspect="AspectFill"
+                     Margin="-20"
+                     HeightRequest="40"
+                     WidthRequest="40" />
+                    </Frame>
+                        <Label x:Name="txtNam" Text="Dr. Name" FontSize="Large" TextTransform="Uppercase"  TextColor="#2A2D70" HorizontalOptions="Center" Margin="5" />
+                    <BoxView BackgroundColor="LightGray" WidthRequest="0.5" HeightRequest="0.5" HorizontalOptions="Fill" VerticalOptions="End" />
+                </StackLayout> 
+                </Frame>
+                <Label x:Name="txtLev" Margin="10" FontSize="Medium"  HorizontalOptions="Center" Text="Username : developers@slis.co.zw"/>
+
+                <Image Margin="20,5,20,0" Source="Codebar"/>
+ 
+                    <Label Text="INPROGRESS..."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                
+                    <!--Good Layout<Grid   Padding="40,70,40,7">-->
+                <!--<Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>                
+                
+                -->
+                <!-- Here add the code that is being explained in all the blocks (starting with Block 1)-->
+                <!--
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalTextAlignment="Center" FontSize="20" FontAttributes="Bold" TextColor="Gray" Text="Boarding Pass" Margin="0,0,0,50"/>                 
+                -->
+                <!-- Boarding: Round trip countries -->
+                <!--
+                <Label Grid.Row="1" Grid.Column="0" Text="Tokyo" FontSize="Micro" TextColor="Gray"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="NRT" FontSize="Large" TextColor="Gray"/>
+
+                <Image Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Source="money" WidthRequest="10" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="6h 0m" FontSize="12" TextColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
+
+                <Label Grid.Row="1" Grid.Column="2" Text="Bangkok" HorizontalOptions="Center" FontSize="Micro" TextColor="Gray"/>
+                <Label Grid.Row="2" Grid.Column="2" Text="DMK"  FontSize="Large" HorizontalOptions="Center" TextColor="Gray" />
+                
+            </Grid>
+
+            <Frame   BackgroundColor="LightGray" CornerRadius="50" HasShadow="False" Margin="-5,5,-5,0">
+
+                <Grid  Padding="20,0,20,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" /> 
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    -->
+                <!-- Here add the code that is being explained in the nex   t block -->
+                <!--ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"-->
+                <!--
+                    <Label Grid.Row="3" Grid.Column="0" Text="CLASS" />
+                    <Label Grid.Row="4" Grid.Column="0" Text="6 Nov"  />
+                    <Label Grid.Row="3" Grid.Column="1" Text="FLIGHT"  />
+                    <Label Grid.Row="4" Grid.Column="1" Text="XJ 607"  />
+
+                    <Label Grid.Row="5" Grid.Column="0" Text="CLASS"  />
+                    <Label Grid.Row="6" Grid.Column="0" Text="Economy"  />
+                    <Label Grid.Row="5" Grid.Column="1" Text="FLIGHT" />
+                    <Label Grid.Row="6" Grid.Column="1" Text="29 G"  />
+
+                    <Label Grid.Row="7" Grid.Column="0" Text="BOARDING TIME"  />
+                    <Label Grid.Row="8" Grid.Column="0" Text="17:25"  />
+
+                    <Label Grid.Row="9" Grid.Column="0" Text="TERMINAL"  />
+                    <Label Grid.Row="10" Grid.Column="0" Text="1"  />
+                    <Label Grid.Row="9" Grid.Column="1" Text="GATE"  />
+                    <Label Grid.Row="10" Grid.Column="1" Text="39"  />
+                    <Image Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Source="Codebar"/>
+
+
+                </Grid>
+
+            </Frame>-->
+
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

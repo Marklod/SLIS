@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:XamarinEntry"
+             NavigationPage.HasNavigationBar="False" 
+             BackgroundColor="Black"  
+             x:Class="SLIS.Views.Registration">
+    <NavigationPage.TitleView > 
+            <Label HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Create Free Account Today!" TextTransform="Uppercase" TextColor="red" FontSize="Large" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label> 
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="0,0,0,0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image Aspect="AspectFill" Opacity="0.5" Source="scope.jpg"
+ RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+ RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
+            <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+ RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+                <ScrollView>
+                    <StackLayout Margin="0,20,0,0" VerticalOptions="Start"  >
+                        <Grid Margin="20,0,20,0" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/> 
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                                <RowDefinition Height="auto"/>  
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Frame Style="{StaticResource FrameStyle}" VerticalOptions="Center" Grid.Row ="0" Margin="0,20,0,0">
+                                    <controls:CustomEntry x:Name="txtIDNo"  Placeholder="National ID Number" Keyboard="Default" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                                </Frame>
+                            <Frame Style="{StaticResource FrameStyle}" VerticalOptions="Center"  Grid.Row ="1" Margin="0,20,0,0">
+                                    <controls:CustomEntry x:Name="txtPatientName"  Placeholder="Patient Name" Keyboard="Default" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                            </Frame>
+
+
+                            <Frame Grid.Row ="2" Margin="0,20,0,0">
+                            <StackLayout >
+                                    <Label Text="D.O.B" VerticalOptions="End" />
+                                    <DatePicker x:Name="txtDOB" Grid.Column="1"  FontSize="Large"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame Margin="0,20,0,0" Style="{StaticResource FrameStyle}" VerticalOptions="Center" Grid.Row ="3" >
+                                    <controls:CustomEntry x:Name="txtPhone"  Keyboard="Numeric"  Placeholder="Phone Number" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                                </Frame>
+
+                            <Frame Margin="0,20,0,0" Style="{StaticResource FrameStyle}" VerticalOptions="Center" Grid.Row ="4">
+                                    <controls:CustomEntry x:Name="txtPassword"  Placeholder="Password" Keyboard="Default" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                                </Frame>
+
+                            <Frame Margin="0,20,0,0" Style="{StaticResource FrameStyle}" VerticalOptions="Center" Grid.Row ="5">
+                                    <controls:CustomEntry x:Name="txtEmail" Placeholder="Username" Keyboard="Default" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                                </Frame>
+
+                            <Picker Margin="0,20,0,0" x:Name="txtGender" Grid.Row ="6"  FontSize="Large" Title="SELECT GENDER" HorizontalOptions="Start" WidthRequest="450" />
+                          
+                            <Button Margin="0,20,0,0"
+                            Grid.Row ="7"
+                            x:Name="btnReg"
+                            VerticalOptions="Center" 
+                            Text="Register"
+                            TextColor="White"
+                            BackgroundColor="#2A2D70"   
+                            BorderColor="Black" 
+                            BorderRadius="1"
+                            CornerRadius="10"
+                            WidthRequest="90"
+                            Clicked="BtnReg_Clicked"/>
+                           
+                              <Label HorizontalOptions="CenterAndExpand" Grid.Row ="8">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="I have Account " TextColor="Black"  FontSize="18"/>
+                                            <Span Text="Login" FontAttributes="Bold" FontSize="18"  TextColor="DarkBlue" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </RelativeLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

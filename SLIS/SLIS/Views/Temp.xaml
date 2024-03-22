@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SLIS.Views.Temp">
+    <AbsoluteLayout>  
+  
+    <!--<StackLayout   AbsoluteLayout.LayoutBounds="0.1,0,400,100" AbsoluteLayout.LayoutFlags="XProportional">  
+        <Label Text="Hello" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,10,0,0"></Label>  
+        <Label Text="You can use your email or passward, or you can continue with your social account" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="250" HeightRequest="50" Margin="20,10,0,0" ></Label>  
+    </StackLayout>-->
+        
+    <StackLayout AbsoluteLayout.LayoutBounds="0.5,370,400,130" AbsoluteLayout.LayoutFlags="XProportional" Margin="0,20,0,0">  
+        <Button Text="REGISTER" x:Name="rgstr" Clicked="rgstr_Clicked"  TextColor="White" BackgroundColor="OrangeRed" HeightRequest="40" WidthRequest="300" HorizontalOptions="Center"></Button>  
+        <Button Text="SIGN IN" x:Name="signin" Clicked="signin_Clicked" TextColor="OrangeRed" BackgroundColor="AntiqueWhite" HeightRequest="40" WidthRequest="300" HorizontalOptions="Center"></Button>  
+        <Label Text="or sign in with" HorizontalOptions="Center"></Label>  
+    </StackLayout>  
+        
+    <!--<StackLayout  AbsoluteLayout.LayoutBounds="0.5,502,400,100" AbsoluteLayout.LayoutFlags="XProportional" Orientation="Horizontal" HorizontalOptions="Center">  
+        <ImageButton Source="facebook.png" x:Name="face" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" BackgroundColor="Transparent" Margin="0,0,10,0" ></ImageButton>  
+        <ImageButton Source="google.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" BackgroundColor="Transparent" Margin="10,0,0,0"></ImageButton>  
+        <ImageButton Source="instagram.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" BackgroundColor="Transparent" Margin="14,0,0,0"></ImageButton>  
+    </StackLayout>-->  
+  
+    <StackLayout AbsoluteLayout.LayoutBounds="0.5,0,350,400" BackgroundColor="Purple" AbsoluteLayout.LayoutFlags="XProportional"  >  
+        <ContentView x:Name="overlay"       
+         AbsoluteLayout.LayoutFlags="All"    
+         IsVisible="False"    
+         BackgroundColor="Red">  
+  
+            <StackLayout 
+                Margin="0"
+           BackgroundColor="White"     
+           HorizontalOptions="Center"     
+           VerticalOptions="Center">  
+  
+                <Label FontSize="18"     
+               TextColor="Green"     
+               HorizontalOptions="Center"  
+               VerticalOptions="Center"  
+               Text="SIGN UP PAGE" />  
+  
+                <Entry      
+               Placeholder="Name"   x:Name="Name1"  
+               TextColor="Black"     
+               VerticalOptions="CenterAndExpand"     
+               HorizontalOptions="FillAndExpand"/>  
+  
+                <Entry      
+               Placeholder="Enter your email"   x:Name="Email1"  
+               TextColor="Black"     
+               VerticalOptions="CenterAndExpand"     
+               HorizontalOptions="FillAndExpand"/>  
+  
+                <Entry      
+               Placeholder="passward"   IsPassword="True"  
+               TextColor="Black"   x:Name="Passward1"  
+               VerticalOptions="CenterAndExpand"     
+               HorizontalOptions="FillAndExpand"/>  
+  
+                <Entry      
+               Placeholder="Entre your address"   x:Name="address1"  
+               TextColor="Black"     
+               VerticalOptions="CenterAndExpand"     
+               HorizontalOptions="FillAndExpand"/>  
+  
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">  
+  
+                    <Button Text="Cancel" FontSize="Large"    
+              VerticalOptions="CenterAndExpand"    
+              HorizontalOptions="Center"    
+                            BorderRadius="10"  
+              x:Name="cncll" Clicked="cncll_Clicked" />  
+  
+                    <Button Text="singup" FontSize="Large"    
+                VerticalOptions="CenterAndExpand"    
+                HorizontalOptions="Center"    
+                            BorderRadius="10"  
+                x:Name="enntr" />  
+                </StackLayout>  
+            </StackLayout>  
+  
+        </ContentView>  
+       
+        <ContentView x:Name="overlay1"    
+         AbsoluteLayout.LayoutBounds="0.5, 0, 1, 1"    
+         AbsoluteLayout.LayoutFlags="All"    
+         IsVisible="False"    
+         BackgroundColor="#C0808080"    
+         Padding="10, 0">
+                <Frame BackgroundColor="WhiteSmoke" Margin="0,0,0,0" CornerRadius="15" HasShadow="True" >
+                    <StackLayout Margin="0,0,0,0">
+                        <Grid Margin="0,0,0,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/> 
+                            </Grid.RowDefinitions>                            
+                            <Image Source="heart.png" Grid.Row="0" Aspect="AspectFit" WidthRequest="60" HeightRequest="60"  HorizontalOptions="Center"  VerticalOptions="Center" />
+                        </Grid>
+
+                        <Grid Margin="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/> 
+                                <RowDefinition Height="auto"/> 
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="username.png" Grid.Row="1" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                            <Entry x:Name="txtUsername" Grid.Row="1" Grid.Column="1"  IsPassword="False" HorizontalTextAlignment="Center" TextColor="Black"   Margin="10,0,10,0" Placeholder="Enter Username" FontSize="Large"/>
+                        </Grid>
+                        
+                        <Grid  Margin="0,0,0,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <ActivityIndicator x:Name="activityindicator"  Grid.Column="1"  Margin="0,-40,0,0" VerticalOptions="Start" BackgroundColor="Transparent"    HorizontalOptions="Center" Color="Orange"   IsRunning="True" HeightRequest="50" IsVisible="True"  />
+                            <Image Source="password.png" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" />
+                            <Entry x:Name="txtPassword" Grid.Column="1"  IsPassword="True" HorizontalTextAlignment="Center" Margin="10,0,10,0"   Placeholder="Enter Password" FontSize="Large"/>
+                        </Grid>
+                        
+                        <Grid Margin="0,10,0,10"  VerticalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row ="0">
+                                <Button
+                                x:Name="btnLogin"
+                                  VerticalOptions="Center"
+                                  Text="Login"
+                                  BackgroundColor="#F5821F"
+                                  TextColor="White" 
+                                  CornerRadius="10"
+                                  WidthRequest="90"/>
+                            </StackLayout>
+                        </Grid>
+                        
+                        <Grid Margin="0,0,0,10"  VerticalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row ="0">
+                                <Button
+                                x:Name="btnCancel" 
+                                  VerticalOptions="Center" 
+                                  BackgroundColor="Transparent"  
+                                BorderColor="#F5821F"  BorderWidth="1"
+                                  TextColor="#F5821F"  
+                                  CornerRadius="10" 
+                                 Clicked="btnCancel_Clicked"
+                                  Text="Cancel"   
+                                  WidthRequest="90"/>
+                            </StackLayout>
+                        </Grid>
+
+                    </StackLayout>
+
+                    <!--<StackLayout Orientation="Vertical"  WidthRequest="400"   
+           BackgroundColor="White"     
+           HorizontalOptions="Center"     
+           VerticalOptions="Center"     
+           Padding="10">  
+                <Label FontSize="18"     
+               TextColor="Green"     
+               HorizontalOptions="Center"  
+               VerticalOptions="Center"  
+               Text="Login in page" />  
+                <Entry      
+               Placeholder="Enter your email"   x:Name="logemail"  
+               TextColor="Black"     
+               VerticalOptions="CenterAndExpand"     
+               HorizontalOptions="FillAndExpand"/>  
+                <Entry      
+               Placeholder="your passward" IsPassword="True" x:Name="logpassward"  
+               TextColor="Black"     
+               VerticalOptions="CenterAndExpand"     
+               HorizontalOptions="FillAndExpand"/>  
+  
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">  
+  
+                    <Button Text="close" FontSize="Large"    
+              VerticalOptions="CenterAndExpand"    
+              HorizontalOptions="Center"    
+              BorderRadius="10"  
+              x:Name="cncll1" Clicked="cncll1_Clicked" />  
+  
+                    <Button Text="Signin" FontSize="Large"    
+                VerticalOptions="CenterAndExpand"    
+                HorizontalOptions="Center"    
+                BorderRadius="10"  
+                x:Name="enntr1"  />  
+                </StackLayout>  
+            </StackLayout>-->
+                </Frame>
+            </ContentView>  
+    </StackLayout>  
+</AbsoluteLayout>
+</ContentPage>

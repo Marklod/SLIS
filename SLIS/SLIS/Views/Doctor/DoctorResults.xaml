@@ -1,12 +1,166 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SLIS.Views.Doctor.DoctorResults">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:XamarinEntry"
+             x:Class="SLIS.Views.Doctor.DoctorResults"
+             NavigationPage.HasNavigationBar="True" 
+             BackgroundColor="White" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="0,0,0,0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <AbsoluteLayout>
+        <RelativeLayout>
+            <Image Aspect="AspectFill" Opacity="1" Source="microscope.jpg"
+ RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+ RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
+            <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+ RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+                <ScrollView>
+                    <StackLayout>
+            <!--#E53F71           
+            purple #9B51B4-->
+            <Grid BackgroundColor="#e0e0e0"  Padding ="10,20,0,0" Margin="0,0,0,-10" x:Name="grdBranch" IsVisible="false">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions> 
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" /> 
+                </Grid.ColumnDefinitions>
+                  <Picker x:Name="txtBranch" IsVisible="true" SelectedIndexChanged="Picker1_OnSelectedIndexChanged"  Grid.Row="0" Grid.Column="0" Margin="20,0,20,0"  FontSize="Large" Title="SELECT BRANCH" HorizontalOptions="Start" WidthRequest="450" />
+                  <ImageButton x:Name="menu" HeightRequest="35" WidthRequest="35" HorizontalOptions="Center" BackgroundColor="Transparent"   Margin="0,0,10,0"  Grid.Column="1" Source="logou.png" Clicked="menu_Clicked" />
+                  </Grid>
+                <Grid BackgroundColor="#e0e0e0" Margin="0,0,0,0"  Padding ="10,20,0,20"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />  
+                </Grid.ColumnDefinitions> 
+                
+                  <Frame Style="{StaticResource FrameStyle}" VerticalOptions="Center" Grid.Column="0" >
+                    <controls:CustomEntry x:Name="txtPatientNameOrLabNumber" Placeholder="search patient name*" Keyboard="Default" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                </Frame>                 
+                 <ImageButton x:Name="search" HeightRequest="35" WidthRequest="35" HorizontalOptions="Center" BackgroundColor="Transparent"   Margin="0,0,10,0"  Grid.Column="1" Clicked="searchLabOrPatient_Clicked"  Source="search.png" /> 
+                 </Grid>            
+            <ActivityIndicator x:Name="activityindicator"  Margin="5" VerticalOptions="Center" HorizontalOptions="Center" Color="Black" IsRunning="True" HeightRequest="30" IsVisible="True"  />
+            <ListView x:Name="AllVisits"
+                     VerticalOptions="CenterAndExpand"
+                      ItemTapped="AllVisits_ItemTapped"
+                      HorizontalOptions="CenterAndExpand" 
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True"
+                      BackgroundColor="Transparent" 
+                      Margin="2,0,0,2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="2,10,2,10" CornerRadius="10" HasShadow="True"  BackgroundColor="WhiteSmoke" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="15" />
+                                        <RowDefinition Height="15" />
+                                        <RowDefinition Height="15" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" /> 
+                                    </Grid.ColumnDefinitions>
+                                    <Image  HorizontalOptions="Start" BackgroundColor="Transparent" Grid.RowSpan="4" VerticalOptions="Center" HeightRequest="60" WidthRequest="60"  Source="{Binding Sex,StringFormat='{}{0}.png'}"/>
+                                                <Image  HorizontalOptions="End" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HeightRequest="60" WidthRequest="60"  Source="{Binding Critical,StringFormat='{}{0}.png'}"/>
+                                                <Label
+                                        Grid.Row="0"
+                                        FontFamily="Montserrat"
+                                        Grid.Column="1"    
+                                        FontSize="Medium"  
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="Start" 
+                                        TextColor="Black">
+                                        <Label.FormattedText>
+                                        <FormattedString>
+                                        <Span Text=""/> 
+                                        <Span Text="{Binding PatientName}"/>
+                                        </FormattedString>
+                                        </Label.FormattedText>
+                                        </Label>
+
+                                    <BoxView BackgroundColor="Transparent"  HorizontalOptions="FillAndExpand"  HeightRequest="0.5" VerticalOptions="End" Grid.Row="0" Grid.Column="1"  />
+                                    <BoxView BackgroundColor="Transparent"  HorizontalOptions="FillAndExpand"  HeightRequest="0.5" VerticalOptions="Start" Grid.Row="2" Grid.Column="1"   />
+                                    <BoxView BackgroundColor="Transparent"  WidthRequest="0.5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1"  Grid.Column="1" />
+                                    <BoxView BackgroundColor="Transparent"   WidthRequest="0.5" HorizontalOptions="EndAndExpand" VerticalOptions="Fill"  Grid.Row="0"  Grid.Column="0"  />
+
+                                    <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Start" TextColor="gray" FontSize="Caption" >
+                                    <Label.FormattedText>
+                                    <FormattedString>
+                                    <Span TextColor="gray"   FontAttributes="Bold" Text="LAB NUMBER: "/> 
+                                    <Span Text="{Binding LabNumber}"/>
+                                    </FormattedString>
+                                    </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Grid.Row="2" Grid.Column="1" VerticalOptions="Start" TextColor="gray" FontSize="Caption">
+                                    <Label.FormattedText>
+                                    <FormattedString>
+                                    <Span FontSize="Small" TextColor="gray"   FontAttributes="Bold" Text="VISIT DATE: "/>
+                                    <Span Text="{Binding VisitDate}"/>
+                                    </FormattedString>
+                                    </Label.FormattedText>
+                                    </Label> 
+
+                                    <Label Grid.Row="3" Grid.Column="1" VerticalOptions="Start" FontAttributes="Bold" Text="{Binding Status}" TextColor="DarkGreen" HorizontalOptions="StartAndExpand">
+                                    <Label.FormattedText>
+                                    <FormattedString>
+                                    <Span FontSize="Small" TextColor="gray"   FontAttributes="Bold" Text="STATUS: "/>
+                                    <Span Text="{Binding Status}"/>
+                                    </FormattedString>
+                                    </Label.FormattedText>
+                                    <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="PENDING">
+                                    <Setter Property="TextColor" Value="#931F1D" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="PARTIALLY COMPLETED">
+                                    <Setter Property="TextColor"  Value="Orange" />
+                                    </DataTrigger>
+                                    </Label.Triggers>                                    
+                                    </Label>
+                                     
+                                <Label Grid.Row="4" Grid.Column="1" VerticalOptions="Start" TextColor="gray" FontSize="Caption">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span FontSize="Small" TextColor="gray"   FontAttributes="Bold" Text="TESTS: "/>
+                                           <Span Text="{Binding Tests}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                             </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-    </ContentPage.Content>
+                </ScrollView>
+            </Grid>
+        </RelativeLayout>
+    </AbsoluteLayout>
 </ContentPage>

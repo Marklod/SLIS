@@ -1,18 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:SLIS.Views.Patient" 
+            xmlns:local="clr-namespace:SLIS.Views.Patient"  
              x:Class="SLIS.Views.Patient.TabbedPage1">
 
     <NavigationPage.TitleView >
         <StackLayout>
-          <Image  HorizontalOptions="Start" BackgroundColor="Transparent"   HeightRequest="40" WidthRequest="40" Margin="5"  Source="heart.png"/>
+            <Grid BackgroundColor="WhiteSmoke"   Padding ="0,10,0,10"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <Image  HorizontalOptions="Start" BackgroundColor="Transparent" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,0,0,0"  HeightRequest="40" WidthRequest="40"  Source="mlogo.png"/>
+                <ImageButton x:Name="search" HeightRequest="25" WidthRequest="25" HorizontalOptions="Center" BackgroundColor="Transparent"   Margin="0,0,10,0"  Grid.Column="2"  Source="search.png" />
+                <ImageButton x:Name="settings" HeightRequest="25" HorizontalOptions="Center"  Margin="0,0,10,0" BackgroundColor="Transparent"   Grid.Column="3" Source="settings.png" />
+                <ImageButton x:Name="menu" HeightRequest="25" WidthRequest="25" HorizontalOptions="Center" BackgroundColor="Transparent"   Margin="0,0,10,0"  Grid.Column="4" Source="logou.png"  />
+            </Grid>           
         </StackLayout>
     </NavigationPage.TitleView>
     
   <!--Pages can be added as references or inline-->
-    <local:PatientResults Title="Results" Icon="results.png" />
     <local:PatientHome Title="Home" Icon="home.png" />
+    <local:PatientResults Title="Results" Icon="results.png" />
     <local:PatientAccount Title="My Account" Icon="myaccount.png" />
   <!--<ContentPage Title="Home" />
   <ContentPage Title="Results" />

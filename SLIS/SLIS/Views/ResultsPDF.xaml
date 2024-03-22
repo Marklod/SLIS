@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:PDFViewerSample.Controls"
+             x:Class="SLIS.Views.ResultsPDF">
+    <NavigationPage.TitleView >
+        <Grid>
+            <Grid.ColumnDefinitions> 
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--<Image  HorizontalOptions="Start" BackgroundColor="Transparent"   HeightRequest="30" WidthRequest="30" Margin="0"  Source="heart.png"/>-->
+            <Label Text="Hello Paisa" VerticalOptions="Center" HorizontalOptions="Start"  x:Name="patname" FontSize="Large" TextColor="White" />
+         </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <controls:GoogleDriveViewerWebView  x:Name="myPDF" > 
+    </controls:GoogleDriveViewerWebView> 
+    </ContentPage.Content> 
+</ContentPage>

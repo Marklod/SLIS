@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White" 
              x:Class="SLIS.Views.Patient.PatientResults">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Label Text="INPROGRESS..."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
                 <!--<ActivityIndicator x:Name="activityindicator"  Margin="5" VerticalOptions="Center" HorizontalOptions="Center" Color="Black" IsRunning="True"   HeightRequest="20" IsVisible="True"  />-->
              <ListView x:Name="resultsList"
+                       IsVisible="false"
                      VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="Center">
                     <ListView.ItemTemplate>

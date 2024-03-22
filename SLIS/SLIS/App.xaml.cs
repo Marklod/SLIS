@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SLIS.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,8 +10,9 @@ namespace SLIS
         public App()
         {
             InitializeComponent();
-           // MainPage = new MainPage();
+            // MainPage = new MainPage();
             MainPage = new NavigationPage(new MainPage());
+            // MainPage = new NavigationPage(new Temp());
         }
 
         protected override void OnStart()
